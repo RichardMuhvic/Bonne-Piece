@@ -36,3 +36,23 @@ sectionFiches.appendChild(prixElement);
 sectionFiches.appendChild(categorieElement);
 sectionFiches.appendChild(disponibiliteElement);
 sectionFiches.appendChild(descriptionElement);
+
+for (let i = 0; i < pieces.length; i++) {
+	// Récupération de l'élément du DOM qui accueillera les fiches
+	const sectionFiches = document.querySelector(".fiches");
+
+	// Création d’une balise dédiée à une pièce automobile
+	const pieceElement = document.createElement("article");
+
+	// On crée l’élément img.
+	const imageElement = document.createElement("img");
+	// On accède à l’indice i de la liste pieces pour configurer la source de l’image.
+	imageElement.src = pieces[i].image;
+	// On rattache l’image à pieceElement (la balise article)
+	pieceElement.appendChild(imageElement);
+
+	// Idem pour le nom, le prix et la catégorie...
+
+	// On rattache la balise article au body
+	document.body.appendChild(pieceElement);
+}
