@@ -6,7 +6,10 @@ body {
 	padding: 16px;
 	font-family: 'Montserrat', sans-serif;
 }
-
+body img {
+	max-width: 200px;
+	height: auto;
+}
 header {
 	display: flex;
 	flex-direction: row;
@@ -45,11 +48,13 @@ main {
 .fiches {
 	flex: 1;
 	margin: 8px;
-	display: grid;
+	display: block;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 4px;
 }
 .fiches article {
+	/*display: flex;
+	flex-direction: column;*/
 	border: 1px solid black;
 	padding: 4px;
 }
