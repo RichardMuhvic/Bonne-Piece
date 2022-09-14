@@ -1,6 +1,6 @@
 // Récupération des pièces depuis le fichier JSON :
 const reponse = await fetch("pieces-autos.json");
-const pieces = await Response.json();
+const pieces = await reponse.json();
 
 // Création des éléments et remplissage du texte ou de la source de l'image: 
 const ampoule = pieces[0];
