@@ -49,3 +49,44 @@ for (let i = 0; i < pieces.length; i++) {
 	// On rattache la balise article au body
 	document.body.appendChild(pieceElement);
 }
+
+//Ajout du listener pour trier les pièces par ordre de prix croissant
+const boutonTrier = document.querySelector(".btn-trier");
+boutonTrier.addEventListener("click", function () {
+	const piecesReordonnees = Array.from(pieces);
+	piecesReordonnees.sort(function (a, b) {
+		return a.prix - b.prix;
+	});
+	console.log(piecesReordonnees);
+});
+
+//Ajout du listener pour filtrer les pièces non abordables
+const boutonFiltrer = document.querySelector(".btn-filtrer");
+boutonFiltrer.addEventListener("click", function () {
+	const piecesFiltrees = pieces.filter( function (pieces) {
+		return pieces.prix <= 35;
+	});
+	console.log(piecesFiltrees);
+});
+
+//Ajout du listener pour filtrer les pièces qui ont une desxription
+const boutonDescriptif = document.querySelector("btn-descriptif");
+boutonDescriptif.addEventListener("click", function () {
+	const piecesDescriptif = pieces.filter( function (pieces) {
+		// Booléen (undefined) -> false
+		// booléen ("bla bla") -> true
+		return Boolean(pieces.description)
+	});
+	console.log(piecesDescriptif);
+})
+
+//Ajout du listener pour trier les pièces par ordre de prix décroissant
+const boutonDecroissant = document.querySelector(".btn-decroissant");
+boutonDecroissant.addEventListener("click", function () {
+	const piecesOrdonnees = Array.from(pieces);
+	piecesOrdonnees.sort(function (a, b) {
+		// B - A (et pas A - B)
+		return b.prix - a.prix;
+	});
+	console.log(piecesOrdonnees);
+});
