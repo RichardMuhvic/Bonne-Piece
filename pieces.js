@@ -50,24 +50,6 @@ for (let i = 0; i < pieces.length; i++) {
 	document.body.appendChild(pieceElement);
 }
 
-//Ajout du listener pour trier les pièces par ordre de prix croissant
-const boutonTrier = document.querySelector(".btn-trier");
-boutonTrier.addEventListener("click", function () {
-	const piecesReordonnees = Array.from(pieces);
-	piecesReordonnees.sort(function (a, b) {
-		return a.prix - b.prix;
-	});
-	console.log(piecesReordonnees);
-});
-
-//Ajout du listener pour filtrer les pièces non abordables
-const boutonFiltrer = document.querySelector(".btn-filtrer");
-boutonFiltrer.addEventListener("click", function () {
-	const piecesFiltrees = pieces.filter( function (pieces) {
-		return pieces.prix <= 35;
-	});
-	console.log(piecesFiltrees);
-});
 
 //Ajout du listener pour filtrer les pièces qui ont une desxription
 const boutonDescriptif = document.querySelector("btn-descriptif");
@@ -90,3 +72,27 @@ boutonDecroissant.addEventListener("click", function () {
 	});
 	console.log(piecesOrdonnees);
 });
+
+
+//récupération du nom des pièces
+const noms = pieces.map(piece => piece.nom);
+
+//Boucle for de la fin vers le début
+for (let i = pieces.length - 1; i >= 0; i--) {
+	if (pieces[i].prix > 35) {
+		noms.splice(i, 1);
+	}
+}
+
+//Création de l'élément ul
+const abordablesElement = document.createElement("ul");
+
+//	Création et rattachement des éléments li
+for (let i = 0; i < noms.length; i++) {
+	const nomElement = document.createElement("li");
+	nomElement.innerText = nom[i];
+	abordablesElement.appendChild(nomElement);
+}
+
+//Rattachement de toute la liste à la page
+document.querySelector(".abordables").appendChild(abordablesElement);
