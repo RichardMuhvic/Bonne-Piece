@@ -1,7 +1,6 @@
 {
   "name": "code",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "http-server",
@@ -10,10 +9,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chart.js": "^3.7.1",
+    "chart.js": "^3.9.1",
     "http-server": "^14.1.0"
   },
   "devDependencies": {
-    "eslint": "^8.16.0"
-  }
+    "eslint": "^8.24.0",
+    "eslint-plugin-react": "^7.31.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RichardMuhvic/Bonne-Piece.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RichardMuhvic/Bonne-Piece/issues"
+  },
+  "homepage": "https://github.com/RichardMuhvic/Bonne-Piece#readme",
+  "description": ""
 }
